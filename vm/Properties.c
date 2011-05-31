@@ -189,6 +189,10 @@ void dvmCreateDefaultProperties(Object* propObj)
 
     setProperty(propObj, put, "os.arch", info.machine);
     setProperty(propObj, put, "os.name", info.sysname);
+#ifdef TARGET_OMAP4
+    setProperty(propObj, put, "target_omap4", "true");
+#endif
+
     setProperty(propObj, put, "os.version", info.release);
     setProperty(propObj, put, "user.home", getenv("HOME"));
     setProperty(propObj, put, "user.name", getenv("USER"));
